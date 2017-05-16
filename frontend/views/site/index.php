@@ -17,7 +17,7 @@ $this->title = '首页';
             <div class="col-lg-4">
                 <h2>都市生活</h2>
                 <p><?php
-                    if (is_array($ctiy) && $city) {
+                    if (is_array($city) && $city) {
                         foreach ($city as $item) {
                             echo Html::a($item['title'], ['small-story/view', 'id' => $item['id']]) . '<br>';
                         }
