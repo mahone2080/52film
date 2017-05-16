@@ -20,7 +20,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name='TTUNION_verify' content='b936cbc9a9f81aaaf899a9126049a63d'>
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode($this->title.'-人生不是故事，人生是事故，摸爬滚打，才不辜负功名尘土。') ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -29,20 +29,18 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Small Story',
+        'brandLabel' => '小故事',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
+    $categories = Yii::$app->params['story_categories'];
+
+    $menuItems = $categories;
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
@@ -71,9 +69,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Small Story <?= date('Y') ?></p>
+        <p class="pull-left">&copy; 小故事 <?= date('Y') ?></p>
 
-        <p class="pull-right">Powered by Small Story</p>
+        <p class="pull-right">Powered by 小故事</p>
     </div>
 </footer>
 

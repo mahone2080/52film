@@ -1,53 +1,49 @@
 <?php
 
 /* @var $this Story\web\View */
+use yii\helpers\Html;
 
-$this->title = 'Story';
+$this->title = '首页';
+
+
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Welcome!</h1>
-
-        <p class="lead">Small story is owesome!</p>
-
-        <p><a class="btn btn-lg btn-success" href="#">Get started with it</a></p>
+        <p class="lead">亲，你来啦！等你很久了哦^_^</p>
     </div>
-
     <div class="body-content">
-
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.xiaogushi.ml/doc/">Story Documentation &raquo;</a></p>
+                <h2>都市生活</h2>
+                <p><?php
+                    if (is_array($ctiy) && $city) {
+                        foreach ($city as $item) {
+                            echo Html::a($item['title'], ['small-story/view', 'id' => $item['id']]) . '<br>';
+                        }
+                    }
+                    ?></p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.xiaogushi.ml/forum/">Story Forum &raquo;</a></p>
+                <h2>人生智慧</h2>
+                <p><?php
+                    if (is_array($smart) && $smart) {
+                        foreach ($smart as $item) {
+                            echo Html::a($item['title'], ['small-story/view', 'id' => $item['id']]) . '<br>';
+                        }
+                    }
+                    ?></p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.xiaogushi.ml/extensions/">Story Extensions &raquo;</a></p>
+                <h2>后宫生活秘籍</h2>
+                <p><?php
+                    if (is_array($hougong) && $hougong) {
+                        foreach ($hougong as $item) {
+                            echo Html::a($item['title'], ['small-story/view', 'id' => $item['id']]) . '<br>';
+                        }
+                    }
+                    ?></p>
             </div>
         </div>
-
     </div>
 </div>

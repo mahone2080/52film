@@ -15,6 +15,9 @@ class LoginForm extends Model
 
     private $_user;
 
+    public static function tableName(){
+        return 'backend_user';
+    }
 
     /**
      * @inheritdoc

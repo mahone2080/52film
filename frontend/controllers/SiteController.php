@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -12,6 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\SmallStory;
 
 /**
  * Site controller
@@ -72,7 +74,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $city = SmallStory::find()->where("category='city'")->limit(10)->all();
+        $smart = SmallStory::find()->where('category="zhihui"')->limit(10)->all();
+        $hougong = SmallStory::find()->where('category="hougong"')->limit(10)->all();
+        return $this->render('index', [
+            'city' => $city,
+            'smart' => $smart,
+            'hougong' => $hougong
+        ]);
     }
 
     /**
