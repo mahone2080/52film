@@ -10,7 +10,7 @@ $this->title = '首页';
 <div class="site-index">
 
     <div class="jumbotron">
-        <p class="lead">亲，你来啦！等你很久了哦^_^</p>
+        <p class="lead">人生不是故事，人生是事故，摸爬滚打，才不辜负功名尘土。</p>
     </div>
     <div class="body-content">
         <div class="row">
