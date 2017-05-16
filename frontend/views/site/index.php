@@ -35,7 +35,7 @@ $this->title = '首页';
                     ?></p>
             </div>
             <div class="col-lg-4">
-                <h2>后宫生活秘籍</h2>
+                <h2>后宫传闻</h2>
                 <p><?php
                     if (is_array($hougong) && $hougong) {
                         foreach ($hougong as $item) {
