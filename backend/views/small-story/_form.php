@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\markdown\MarkdownEditor;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\SmallStory */
@@ -16,8 +17,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
-
+    <?= MarkdownEditor::widget([
+        'model' => $model,
+        'attribute' => 'content',
+    ]);
+    ?>
     <?= $form->field($model, 'category')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'created_at')->textInput(['maxlength' => true]) ?>
