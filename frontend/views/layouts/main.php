@@ -32,11 +32,24 @@ AppAsset::register($this);
         'brandLabel' => '小故事',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar navbar-inverse navbar-fixed-bottom',
+            'style' =>'background-color:#520'
         ],
     ]);
+    ?>
+    <div>
+        <p class="navbar-text">这里面天天都有故事@_@</p>
+    </div>
+<!--    <div>-->
+<!--        <form class="navbar-form navbar-left" role="search">-->
+<!--            <div class="form-group">-->
+<!--                <input type="text" class="form-control" placeholder="Search">-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-default">提交</button>-->
+<!--        </form>-->
+<!--    </div>-->
+    <?php
     $categories = Yii::$app->params['story_categories'];
-
     $menuItems = $categories;
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
@@ -69,9 +82,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; 小故事 <?= date('Y') ?></p>
 
-        <p class="pull-right">Powered by 小故事</p>
     </div>
 </footer>
 

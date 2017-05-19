@@ -9,8 +9,8 @@ use yii\widgets\DetailView;
 $this->title = $model->title;
 ?>
 <div class="small-story-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?= nl2br($model->content) ?>
-
+    <div class="text-warning">
+    <h4 class="page-header"><?= Html::encode($this->title) ?></h4>
+    <div class="text-success"><?= nl2br($model->content) ?></div>
+    </div>
 </div>

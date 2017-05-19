@@ -43,7 +43,7 @@ return [
         ['label' => '民间', 'url' => ['small-story/index', 'category' => 'china_folk,foreign_folk']],
         ['label' => '名人', 'url' => ['small-story/index', 'category' => 'china_famous,foreign_famous']],
         ['label' => '创业', 'url' => ['small-story/index', 'category' => 'famous_chuangye,folk_chuangye,daxueshengchuangye,nvxing_chuangye']],
-        ['label' => '职场', 'url' => ['small-story/index', 'category' => 'renwu']],
+//        ['label' => '职场', 'url' => ['small-story/index', 'category' => 'renwu']],
 
     ],
     'user.passwordResetTokenExpire' => 3600,

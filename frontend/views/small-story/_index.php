@@ -7,7 +7,10 @@
  */
 
 use yii\helpers\Html;
+
 ?>
-<p>
-    <?=Html::a($model->title,['small-story/view','id'=>$model->id])?>
-</p>
+<tr class="warning">
+    <td>
+        <?= Html::a($model->title, ['small-story/view', 'id' => $model->id], ['class' => 'text-warning']) ?>
+    </td>
+</tr>
