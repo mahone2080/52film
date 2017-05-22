@@ -23,7 +23,7 @@ $this->title = '世界因你而不同';
                 <?php
                 if (is_array($city) && $city) {
                     foreach ($city as $item) {
-                        echo '<tr class="warning"><td><span style="color: red"><span class="glyphicon glyphicon-heart"></span></span>'.Html::a($item['title'], ['small-story/view', 'id' => $item['id'],], ['class' => 'text-warning']).'</td></tr>';
+                        echo '<tr class="warning"><td><span style="color: red"><span class="glyphicon glyphicon-heart"></span></span>'.Html::a($item['title'], ['small-story/view', 'id' => $item['id'],], ['class' => 'text-warning']).'</td><td class="text-right">'.$item['view'].'次浏览</td></tr>';
                     }
                 }
                 ?>
@@ -38,7 +38,7 @@ $this->title = '世界因你而不同';
                 <?php
                 if (is_array($smart) && $smart) {
                     foreach ($smart as $item) {
-                        echo '<tr class="warning"><td>'.Html::a($item['title'], ['small-story/view', 'id' => $item['id']], ['class' => 'text-warning']).'</td></tr>';
+                        echo '<tr class="warning"><td>'.Html::a($item['title'], ['small-story/view', 'id' => $item['id']], ['class' => 'text-warning']).'</td><td class="text-right">'.$item['view'].'次浏览</td></tr>';
                     }
                 }
                 ?>
@@ -52,7 +52,7 @@ $this->title = '世界因你而不同';
                 <?php
                 if (is_array($hougong) && $hougong) {
                     foreach ($hougong as $item) {
-                        echo '<tr class="warning"><td><span style="color: blue">'.Html::a($item['title'], ['small-story/view', 'id' => $item['id']], ['class' => 'text-warning']).'</td></tr>';
+                        echo '<tr class="warning"><td><span style="color: blue">'.Html::a($item['title'], ['small-story/view', 'id' => $item['id']], ['class' => 'text-warning']).'</td><td class="text-right">'.$item['view'].'次浏览</td></tr>';
                     }
                 }
                 ?>

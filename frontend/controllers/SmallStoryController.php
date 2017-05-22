@@ -47,13 +47,16 @@ class SmallStoryController extends Controller
 
     /**
      * Displays a single SmallStory model.
-     * @param string $id
+     * @param string $id *
      * @return mixed
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $model->view = $model->view + 1;
+        $model->save();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
