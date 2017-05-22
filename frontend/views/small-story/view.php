@@ -10,7 +10,18 @@ $this->title = $model->title;
 ?>
 <div class="small-story-view">
     <div class="text-warning">
-    <h4 class="page-header"><?= Html::encode($this->title) ?></h4>
-    <div class="text-success"><?= nl2br($model->content) ?></div>
+        <h4 class="page-header"><?= Html::encode($this->title) ?></h4>
+        <div class="text-success"><?= nl2br($model->content) ?></div>
+        <div>
+            <?php
+            $comments = $model->getSmallStoryComments();
+            //            var_dump($comments);
+            //            die;
+            foreach ($comments as $item) {
+                echo $item->content;
+            }
+
+            ?>
+        </div>
     </div>
 </div>

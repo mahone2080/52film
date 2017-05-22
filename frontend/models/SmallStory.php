@@ -59,4 +59,9 @@ class SmallStory extends \yii\db\ActiveRecord
     {
         return new SmallStoryQuery(get_called_class());
     }
+
+    public function getSmallStoryComments()
+    {
+        return $this->hasMany(SmallStory::className(), ['id' => 'story_id']);
+    }
 }
