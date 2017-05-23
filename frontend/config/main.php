@@ -26,11 +26,31 @@ return [
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
+            'flushInterval' => 1,
             'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
+                'db' => [
+                    'class' => 'yii\log\DbTarget',
+                    'logVars' => ['$_GET', '$_POST', '$_FILES',],
+                    'exportInterval' => 1,
                     'levels' => ['error', 'warning'],
+                    'categories' => [
+                        'yii\db\*',
+                        'yii\web\HttpException:*',
+                    ],
+                    'except' => [
+                        'yii\web\HttpException:404',
+                        'yii\web\HttpException:403',
+                    ],
                 ],
+                'file' => [
+                    'class' => 'yii\log\FileTarget',
+                    'logVars' => [],
+                    'levels' => ['info'],
+                    'except' => [
+                        'yii\web\*',
+                        'yii\db\*',
+                    ]
+                ]
             ],
         ],
         'errorHandler' => [
