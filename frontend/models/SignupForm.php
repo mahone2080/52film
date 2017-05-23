@@ -1,8 +1,10 @@
 <?php
 namespace frontend\models;
 
+use yii;
 use yii\base\Model;
 use common\models\User;
+use yii\web\request;
 
 /**
  * Signup form
@@ -12,6 +14,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $ip;
 
 
     /**
@@ -33,6 +36,7 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            ['ip', 'ip'],
         ];
     }
 
@@ -46,13 +50,14 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
-        
+
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        
+        $user->ip = Yii::$app->request->userIP;
+
         return $user->save() ? $user : null;
     }
 }

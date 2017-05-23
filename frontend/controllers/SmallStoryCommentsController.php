@@ -3,17 +3,19 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\SmallStory;
-use frontend\models\SmallStorySearch;
+use frontend\models\SmallStoryComments;
+use frontend\models\SmallStoryCommentsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use frontend\models\SmallStoryComments;
+use yii\filters\AccessControl;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 /**
- * SmallStoryController implements the CRUD actions for SmallStory model.
+ * SmallStoryCommentsController implements the CRUD actions for SmallStoryComments model.
  */
-class SmallStoryController extends Controller
+class SmallStoryCommentsController extends Controller
 {
     /**
      * @inheritdoc
@@ -21,7 +23,16 @@ class SmallStoryController extends Controller
     public function behaviors()
     {
         return [
-            
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -32,13 +43,12 @@ class SmallStoryController extends Controller
     }
 
     /**
-     * Lists all SmallStory models.
+     * Lists all SmallStoryComments models.
      * @return mixed
      */
-    public function actionIndex($category = 'china_history')
+    public function actionIndex()
     {
-        $searchModel = new SmallStorySearch();
-        $searchModel->category = $category;
+        $searchModel = new SmallStoryCommentsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -48,44 +58,42 @@ class SmallStoryController extends Controller
     }
 
     /**
-     * Displays a single SmallStory model.
-     * @param string $id *
+     * Displays a single SmallStoryComments model.
+     * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
-        $commentModel = new SmallStoryComments();
-        $model = $this->findModel($id);
-        $model->view = $model->view + 1;
-        $model->save();
         return $this->render('view', [
-            'model' => $model,
-            'commentModel' => $commentModel,
+            'model' => $this->findModel($id),
         ]);
     }
 
     /**
-     * Creates a new SmallStory model.
+     * Creates a new SmallStoryComments model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new SmallStory();
 
+        $model = new SmallStoryComments();
+
+//        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+//            Yii::$app->response->format = Response::FORMAT_JSON;
+//            return ActiveForm::validate($model);
+//        }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(Yii::$app->request->referrer);
         } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            Yii::$app->session->setFlash('failure', '请重试');
         }
     }
 
     /**
-     * Updates an existing SmallStory model.
+     * Updates an existing SmallStoryComments model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id
+     * @param integer $id
      * @return mixed
      */
     public function actionUpdate($id)
@@ -102,9 +110,9 @@ class SmallStoryController extends Controller
     }
 
     /**
-     * Deletes an existing SmallStory model.
+     * Deletes an existing SmallStoryComments model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id
+     * @param integer $id
      * @return mixed
      */
     public function actionDelete($id)
@@ -115,15 +123,15 @@ class SmallStoryController extends Controller
     }
 
     /**
-     * Finds the SmallStory model based on its primary key value.
+     * Finds the SmallStoryComments model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $id
-     * @return SmallStory the loaded model
+     * @param integer $id
+     * @return SmallStoryComments the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = SmallStory::findOne($id)) !== null) {
+        if (($model = SmallStoryComments::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

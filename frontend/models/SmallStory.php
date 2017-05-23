@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use frontend\models\SmallStoryComments;
 
 /**
  * This is the model class for table "small_story".
@@ -62,6 +63,6 @@ class SmallStory extends \yii\db\ActiveRecord
 
     public function getSmallStoryComments()
     {
-        return $this->hasMany(SmallStory::className(), ['id' => 'story_id']);
+        return $this->hasMany(SmallStoryComments::className(), ['story_id' => 'id']);
     }
 }
