@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use common\models\User;
 
 /**
  * This is the model class for table "small_story_comments".
@@ -36,6 +37,7 @@ class SmallStoryComments extends \yii\db\ActiveRecord
             [['pid'], 'default', 'value' => 0],
             [['review'], 'default', 'value' => 1],
             [['content'], 'string', 'max' => 255],
+            ['user_id', 'default', 'value' => Yii::$app->user->id]
         ];
     }
 
@@ -61,5 +63,10 @@ class SmallStoryComments extends \yii\db\ActiveRecord
     public static function find()
     {
         return new SmallStoryCommentsQuery(get_called_class());
+    }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 }

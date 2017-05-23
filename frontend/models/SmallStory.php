@@ -63,6 +63,7 @@ class SmallStory extends \yii\db\ActiveRecord
 
     public function getSmallStoryComments()
     {
+//        return $this->hasMany(SmallStoryComments::className(), ['story_id' => 'id'])->where(['review' => 3]);
         return $this->hasMany(SmallStoryComments::className(), ['story_id' => 'id']);
     }
 }

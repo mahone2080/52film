@@ -31,7 +31,7 @@ $this->title = $model->title;
                 $comments = $model->smallStoryComments;
                 //            var_dump($comments);
                 foreach ($comments as $item) {
-                    echo '<tr><td>' . $item->content . '</td><td>' . $item->created_at . '</td></tr>';
+                    echo '<tr><td>' . $item->content . '</td><td style="width:10%">' . $item->user->username . '</td><td style="width:15%">' . $item->created_at . '</td></tr>';
                 }
                 ?>
             </table>
