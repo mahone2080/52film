@@ -17,13 +17,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     $arr_download = (json_decode($model->download));
     if (is_array($arr_download) && count($arr_download) > 0) {
-        echo '<h4>下载地址：</h4>';
+        echo "<div class='panel panel-success'>";
+        echo '<div class="panel-heading">下载地址：</div>';
         foreach ($arr_download as $dl) {
             echo $dl . '<br>';
         }
-        echo "<hr>";
-    }
 
+    }
+    echo '</div><div class="panel panel-success"><div class="panel-heading">';
     $arr_content = json_decode($model->content);
     if (is_array($arr_content) && count($arr_content) > 0) {
         foreach ($arr_content as $item) {
@@ -32,12 +33,15 @@ $this->params['breadcrumbs'][] = $this->title;
     } else {
         echo nl2br(Html::encode($model->content));
     }
+
+    echo "</div></div>";
     $arr_pics = json_decode($model->pics);
     if (is_array($arr_pics) && count($arr_pics) > 0) {
         foreach ($arr_pics as $k => $pic) {
             echo Html::img("data:image/jpeg;base64," . $pic, ['alt' => 'thumb' . $k, 'width' => '']) . "<br>";
         }
     }
+
     $arr_download = (json_decode($model->download));
     if (is_array($arr_download) && count($arr_download) > 0) {
         echo '<h4>下载地址：</h4>';

@@ -13,10 +13,10 @@ $this->title = '最新电影';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
-<div class="">
+<div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <p>
-    <div class="">
+    <div>
         <?php
         echo ListView::widget([
             'dataProvider' => $dataProvider,
@@ -39,4 +39,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     </div>
 
+    <!--    <div class="row">-->
+    <?php
+    //        foreach ($dataProvider->models as $item) {
+    //            echo "<div class='col-xs-4 col-sm-3 col-md-2'>";
+    //            echo '<div class="thumbnail">';
+    //            echo Html::a(Html::img('data:image/jpeg;base64,' . $item->thumb, ['alt' => $item->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $item->id]);
+    //            echo "<div class='text-center'><h5>" . Html::a($item->title, ['film-studio/view', 'id' => $item->id]) . "</h5></div></div></div>";
+    ////            echo "<div class='clearfix'></div>";
+    //        }
+    ?>
+
+    <!--    </div>-->
 </div>

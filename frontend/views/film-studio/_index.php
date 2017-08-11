@@ -14,7 +14,7 @@ use yii\helpers\StringHelper;
 
 <div class="thumbnail">
     <?= Html::a(Html::img('data:image/jpeg;base64,' . $model->thumb, ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]); ?>
-    <div class="caption text-center">
-        <h5 class="text-overflow"><?= Html::a($model->title, ['film-studio/view', 'id' => $model->id]) ?></h5>
+    <div class="text-center">
+        <h5 style="text-overflow: ellipsis;overflow: hidden;white-space: nowrap;"><?= Html::a($model->title, ['film-studio/view', 'id' => $model->id]) ?></h5>
     </div>
 </div>

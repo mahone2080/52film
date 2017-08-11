@@ -19,9 +19,11 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name='TTUNION_verify' content='b936cbc9a9f81aaaf899a9126049a63d'>
+    <?php $this->registerCssFile('@web/css/film-list.css') ?>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title . '-影视庄园') ?></title>
     <?php $this->head() ?>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -30,27 +32,41 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => '影视庄园',
-        'brandUrl' => Yii::$app->homeUrl,
+        'brandUrl' => ['/film-studio/index'],
         'options' => [
             'class' => 'navbar  navbar-default navbar-fixed-top',
             #'style' => 'background-color:#520'
         ],
+        'renderInnerContainer' => false,
     ]);
+
+    echo '<div>'
+        . '<p class="navbar-text">电影放映室@_@</p>'
+        . '</div>';
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-left'],
+        'items' => [
+            ['label' => '最新', 'url' => [], 'options' => ['class' => 'bg-success hidden-md']],
+            ['label' => '记录片', 'url' => [], 'options' => ['class' => 'bg-warning hidden-md']],
+        ],
+    ]);
+
     ?>
     <div>
-        <p class="navbar-text">电影放映室@_@</p>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="标题｜类别｜演员｜简介">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+        </form>
     </div>
-    <!--    <div>-->
-    <!--        <form class="navbar-form navbar-left" role="search">-->
-    <!--            <div class="form-group">-->
-    <!--                <input type="text" class="form-control" placeholder="Search">-->
-    <!--            </div>-->
-    <!--            <button type="submit" class="btn btn-default">提交</button>-->
-    <!--        </form>-->
-    <!--    </div>-->
+
     <?php
+
+
     $categories = Yii::$app->params['story_categories'];
-    $menuItems = $categories;
+    #$menuItems = $categories;
+
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
