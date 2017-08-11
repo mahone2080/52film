@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Film Studios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerCssFile('@web/css/film-list.css');
 ?>
 <div class="film-studio-view">
     <?= DetailView::widget([
@@ -55,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $arr_pics = json_decode($model->pics);
     if (is_array($arr_pics) && count($arr_pics) > 0) {
         foreach ($arr_pics as $k => $pic) {
-            echo Html::img("data:image/jpeg;base64," . $pic, ['alt' => 'thumb' . $k, 'width' => '61.8%']) . "<br>";
+            echo Html::img("data:image/jpeg;base64," . $pic, ['alt' => 'thumb' . $k, 'class' => 'img-rounded']) . "<br>";
         }
     }
     ?>

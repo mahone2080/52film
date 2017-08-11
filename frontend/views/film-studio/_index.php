@@ -7,14 +7,14 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 ?>
-<tr class="warning">
-    <td>
-        <?=Html::img('data:image/jpeg;base64,' . $model->thumb, ['width' => '50px']);?>
-        <?= Html::a($model->title, ['film-studio/view', 'id' => $model->id], ['class' => 'text-warning']) ?>
-    </td>
-    <td class="text-right text-warning">
-        <?= Html::encode($model->created_at) ?>
-    </td>
-</tr>
+
+<div class="thumbnail">
+    <?= Html::a(Html::img('data:image/jpeg;base64,' . $model->thumb, ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]); ?>
+    <div class="caption text-center">
+        <h5 class="text-overflow"><?= Html::a($model->title, ['film-studio/view', 'id' => $model->id]) ?></h5>
+    </div>
+</div>

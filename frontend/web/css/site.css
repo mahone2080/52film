@@ -101,14 +101,15 @@ a.desc:after {
     border: none;
 }
 
-@media(max-width:767px) {
+@media (max-width: 767px) {
     .nav li > form > button.logout {
-        display:block;
+        display: block;
         text-align: left;
         width: 100%;
         padding: 10px 15px;
     }
 }
+
 
 .nav > li > form > button.logout:focus,
 .nav > li > form > button.logout:hover {
@@ -117,4 +118,7 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+@-moz-document url-prefix() {
+    fieldset { display: table-cell; }
 }

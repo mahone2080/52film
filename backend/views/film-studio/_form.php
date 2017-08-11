@@ -8,12 +8,11 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="film-studio-form">
+<div class="form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true,'class'=>'col-sm-2 form-control'])->label('uri', ['class' => 'col-sm-2 control-label']) ?>
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>

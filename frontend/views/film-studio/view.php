@@ -23,20 +23,19 @@ $this->params['breadcrumbs'][] = $this->title;
         }
         echo "<hr>";
     }
-    /*
+
     $arr_content = json_decode($model->content);
     if (is_array($arr_content) && count($arr_content) > 0) {
         foreach ($arr_content as $item) {
             echo "◎" . $item . '<br>';
         }
+    } else {
+        echo nl2br(Html::encode($model->content));
     }
-    */
-    echo nl2br(Html::encode($model->content));
-
     $arr_pics = json_decode($model->pics);
     if (is_array($arr_pics) && count($arr_pics) > 0) {
         foreach ($arr_pics as $k => $pic) {
-            echo Html::img("data:image/jpeg;base64," . $pic, ['alt' => 'thumb' . $k, 'width' => '61.8%']) . "<br>";
+            echo Html::img("data:image/jpeg;base64," . $pic, ['alt' => 'thumb' . $k, 'width' => '']) . "<br>";
         }
     }
     $arr_download = (json_decode($model->download));
