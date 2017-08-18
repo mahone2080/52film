@@ -10,10 +10,18 @@
         width: 100%;
         /*min-width: 200px;*/
     }
+
+    .thumbnail a > img {
+        max-height: 120px;
+    }
 }
 
 @media (min-width: 767px) {
     img {
         width: 61.8%;
+    }
+
+    .thumbnail a > img {
+        max-height: 119px;
     }
 }
