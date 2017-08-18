@@ -11,10 +11,18 @@ use yii\widgets\ActiveForm;
 $this->title = $model->title;
 ?>
 <div class="small-story-view">
-    <div class="text-warning">
-        <h4 class="page-header"><?= Html::encode($this->title) ?></h4>
-        <div class="text-success"><?= nl2br($model->content) ?></div>
-        <div>
+
+    <div class="page-header">
+        <h5 class="text-justify">关注儿童身心健康，我们与您一起成长！</h5>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+        </div>
+        <div class="panel-body text-warning">
+            <?= nl2br($model->content) ?>
+        </div>
+        <div class="panel-footer">
             <?php $form = ActiveForm::begin(['action' => ['small-story-comments/create'], 'method' => 'post',
 //                'enableAjaxValidation' => true,
             ]); ?>
@@ -25,16 +33,19 @@ $this->title = $model->title;
             </div>
             <?php ActiveForm::end(); ?>
         </div>
-        <div>
-            <table class="table">
-                <?php
-                $comments = $model->smallStoryComments;
-                //            var_dump($comments);
+        <div class="panel-footer">
+            <?php
+            $comments = $model->smallStoryComments;
+            if (is_array($comments) && count($comments) > 0) {
+                echo "<ul class='list-group'>";
                 foreach ($comments as $item) {
-                    echo '<tr><td>' . $item->content . '</td><td style="width:10%">' . $item->user->username . '</td><td style="width:15%">' . $item->created_at . '</td></tr>';
+                    echo '<li class="list-group-item">' . $item->content . '&nbsp;&nbsp;<span>' . $item->user->username . '&nbsp;&nbsp;' . $item->created_at . '</span></li>';
                 }
-                ?>
-            </table>
+                echo "</ul>";
+            }
+            ?>
         </div>
+    </div>
+    <div>
     </div>
 </div>

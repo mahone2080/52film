@@ -9,11 +9,5 @@
 use yii\helpers\Html;
 
 ?>
-<tr class="warning">
-    <td>
-        <?= Html::a($model->title, ['small-story/view', 'id' => $model->id], ['class' => 'text-warning']) ?>
-    </td>
-    <td class="text-right text-warning">
-        <?= Html::encode($model->view) ?>次浏览
-    </td>
-</tr>
+    <span class="badge"><?= Html::encode($model->view) ?>次浏览</span>
+<?= Html::a($model->title, ['small-story/view', 'id' => $model->id], ['class' => 'text-warning']) ?>

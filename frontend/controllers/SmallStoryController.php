@@ -15,13 +15,15 @@ use frontend\models\SmallStoryComments;
  */
 class SmallStoryController extends Controller
 {
+    public $layout = 'story';
+
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
         return [
-            
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
