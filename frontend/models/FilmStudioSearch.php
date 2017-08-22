@@ -47,6 +47,9 @@ class FilmStudioSearch extends FilmStudio
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 24
+            ]
         ]);
 
         $this->load($params);
