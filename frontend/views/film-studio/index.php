@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ListView;
 use yii\widgets\LinkPager;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\FilmStudioSearch */
@@ -17,7 +18,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <p>
     <div>
+
         <?php
+        Pjax::begin();
         echo ListView::widget([
             'dataProvider' => $dataProvider,
             'itemView' => '_index',
@@ -35,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'nextPageLabel' => '下一页 <span aria-hidden="true">&rarr;</span>'
             ],
         ]);
+        Pjax::end();
         ?>
 
     </div>

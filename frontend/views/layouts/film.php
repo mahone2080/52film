@@ -3,11 +3,15 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\ActiveForm;
 use frontend\assets\AppAsset;
+use frontend\models\FilmStudioSearch;
 use common\widgets\Alert;
 
 AppAsset::register($this);
@@ -46,16 +50,19 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
-            ['label' => '最新', 'url' => [], 'options' => ['class' => 'bg-success hidden-md']],
-            ['label' => '记录片', 'url' => [], 'options' => ['class' => 'bg-warning hidden-md']],
+            ['label' => '推荐', 'url' => ['film-studio/index', 'FilmStudioSearch[category]' => 'bd'], 'options' => ['class' => 'bg-success hidden-md']],
+            ['label' => '记录片', 'url' => ['film-studio/index', 'FilmStudioSearch[category]' => 'documentary'], 'options' => ['class' => 'bg-warning hidden-md']],
         ],
     ]);
 
     ?>
     <div>
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" action="<?= Url::to(['film-studio/index']) ?>">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="标题｜类别｜演员｜简介">
+                <input type="text" class="form-control" id="filmstudiosearch-title" name="FilmStudioSearch[title]"
+                       placeholder="标题">
+                <input type="text" class="form-control" id="filmstudiosearch-content" name="FilmStudioSearch[content]"
+                       placeholder="别名|类别|演员|年代|简介">
             </div>
             <button type="submit" class="btn btn-default">搜索</button>
         </form>

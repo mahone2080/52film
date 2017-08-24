@@ -12,15 +12,27 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="film-studio-view">
 
+
     <?php
     //    echo Html::img("data:image/jpeg;base64," . $model->thumb, ['alt' => 'thumb',]) . '<br>';
 
     $arr_download = (json_decode($model->download));
     if (is_array($arr_download) && count($arr_download) > 0) {
         echo "<div class='panel panel-success'>";
+        foreach ($arr_download as $dl) {
+            if (strpos($dl, 'embed')) {
+                echo '<div class="panel-heading">预告片</div><div class="embed-responsive embed-responsive-16by9">' . $dl . '</div>';
+            } else {
+                //
+            }
+        }
         echo '<div class="panel-heading">下载地址：</div>';
         foreach ($arr_download as $dl) {
-            echo $dl . '<br>';
+            if (strpos($dl, 'embed') || trim($dl) == '预告片') {
+                //
+            } else {
+                echo $dl . '<br>';
+            }
         }
 
     }
@@ -44,10 +56,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
     $arr_download = (json_decode($model->download));
     if (is_array($arr_download) && count($arr_download) > 0) {
-        echo '<h4>下载地址：</h4>';
+        echo "<div class='panel panel-success'>";
         foreach ($arr_download as $dl) {
-            echo $dl . '<br>';
+            if (strpos($dl, 'embed')) {
+                echo '<div class="panel-heading">预告片</div><div class="embed-responsive embed-responsive-16by9">' . $dl . '</div>';
+            } else {
+                //
+            }
         }
+        echo '<div class="panel-heading">下载地址：</div>';
+        foreach ($arr_download as $dl) {
+            if (strpos($dl, 'embed') || trim($dl) == '预告片') {
+                //
+            } else {
+                echo $dl . '<br>';
+            }
+        }
+
     }
     ?>
 

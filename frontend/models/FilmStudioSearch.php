@@ -19,7 +19,7 @@ class FilmStudioSearch extends FilmStudio
     {
         return [
             [['id'], 'integer'],
-            [['url', 'title', 'content', 'thumb', 'imgs', 'pics', 'download', 'created_at'], 'safe'],
+            [['url', 'title', 'content', 'category', 'created_at'], 'safe'],
         ];
     }
 
@@ -46,7 +46,7 @@ class FilmStudioSearch extends FilmStudio
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
+            'query' => $query->select(['id', 'title', 'thumb']),
             'pagination' => [
                 'pageSize' => 24
             ]
@@ -62,17 +62,11 @@ class FilmStudioSearch extends FilmStudio
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'created_at' => $this->created_at,
+            'category' => $this->category,
         ]);
 
-        $query->andFilterWhere(['like', 'url', $this->url])
-            ->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'thumb', $this->thumb])
-            ->andFilterWhere(['like', 'imgs', $this->imgs])
-            ->andFilterWhere(['like', 'pics', $this->pics])
-            ->andFilterWhere(['like', 'download', $this->download]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;
     }

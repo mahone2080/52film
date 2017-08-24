@@ -10,6 +10,7 @@ use Yii;
  * @property string $id
  * @property string $url
  * @property string $title
+ * @property string $category
  * @property string $content
  * @property resource $thumb
  * @property string $imgs
@@ -33,7 +34,7 @@ class FilmStudio extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['url', 'title', 'content', 'thumb', 'imgs', 'pics', 'download'], 'required'],
+            [['url', 'title', 'content',], 'required'],
             [['content', 'thumb', 'imgs', 'pics', 'download'], 'string'],
             [['created_at'], 'safe'],
             [['url', 'title'], 'string', 'max' => 255],
