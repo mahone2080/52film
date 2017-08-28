@@ -45,7 +45,7 @@ AppAsset::register($this);
     ]);
 
     echo '<div>'
-        . '<p class="navbar-text">电影放映室@_@</p>'
+        . '<p class="navbar-text">影视放映室@_@</p>'
         . '</div>';
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
