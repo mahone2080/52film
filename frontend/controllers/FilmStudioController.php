@@ -38,7 +38,7 @@ class FilmStudioController extends Controller
     public function actionIndex()
     {
         $searchModel = new FilmStudioSearch();
-        $searchModel->content = '爱情';
+//        $searchModel->content = '爱情';
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
