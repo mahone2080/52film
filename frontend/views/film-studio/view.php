@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     //    echo Html::img("data:image/jpeg;base64," . $model->thumb, ['alt' => 'thumb',]) . '<br>';
 
-    $arr_download = (json_decode($model->download));
+    $arr_download = json_decode($model->download);
     if (is_array($arr_download) && count($arr_download) > 0) {
         echo "<div class='panel panel-success'>";
         foreach ($arr_download as $dl) {
@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
         }
     }
 
-    $arr_download = (json_decode($model->download));
+    $arr_download = json_decode($model->download);
     if (is_array($arr_download) && count($arr_download) > 0) {
         echo "<div class='panel panel-success'>";
         foreach ($arr_download as $dl) {
