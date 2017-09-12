@@ -49,7 +49,13 @@ class FilmStudioSearch extends FilmStudio
             'query' => $query->select(['id', 'title', 'thumb']),
             'pagination' => [
                 'pageSize' => 24
-            ]
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'created_at' => SORT_DESC,
+//                    'title' => SORT_ASC,
+                ]
+            ],
         ]);
 
         $this->load($params);
