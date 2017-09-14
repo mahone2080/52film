@@ -31,13 +31,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::a($model->title, $model->url, ['target' => '_blank']);
                 }
             ],
-            [
-                'attribute' => 'thumb',
-                'format' => 'raw',
-                'value' => function ($model) {
-                    return Html::a(Html::img('data:image/jpeg;base64,' . $model->thumb, ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]);
-                }
-            ],
+//            [
+//                'attribute' => 'thumb',
+//                'format' => 'raw',
+//                'value' => function ($model) {
+//                    return Html::a(Html::img('data:image/jpeg;base64,' . $model->thumb, ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]);
+//                }
+//            ],
 //            'content:ntext',
 //            'thumb',
 //             'imgs:ntext',
