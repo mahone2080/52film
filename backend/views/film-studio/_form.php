@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\FilmStudio */
@@ -10,9 +11,12 @@ use yii\widgets\ActiveForm;
 
 <div class="form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'id' => 'film',
+        'layout' => 'horizontal'
+    ]); ?>
 
-    <?= $form->field($model, 'url')->textInput(['maxlength' => true,'class'=>'col-sm-2 form-control'])->label('uri', ['class' => 'col-sm-2 control-label']) ?>
+    <?= $form->field($model, 'url')->textInput(['maxlength' => true, 'class' => 'col-sm-2 form-control'])->label('uri', ['class' => 'col-sm-2 control-label']) ?>
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
@@ -28,7 +32,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'created_at')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <div class="col-md-offset-3">
+            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        </div>
     </div>
     <?php ActiveForm::end(); ?>
 
