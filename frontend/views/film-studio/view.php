@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
         echo nl2br(Html::encode($model->content));
     }
 
-    echo "</div></div>";
+    echo "</div></div><br>";
     $arr_pics = json_decode($model->pics);
     if (is_array($arr_pics) && count($arr_pics) > 0) {
         foreach ($arr_pics as $k => $pic) {
