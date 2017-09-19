@@ -53,6 +53,7 @@ $this->registerCssFile('@web/css/film-list.css');
 
     echo nl2br(Html::encode($model->content));
 
+    echo "<br>";
     $arr_pics = json_decode($model->pics);
     if (is_array($arr_pics) && count($arr_pics) > 0) {
         foreach ($arr_pics as $k => $pic) {
