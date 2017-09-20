@@ -36,7 +36,12 @@ $this->params['breadcrumbs'][] = $this->title;
         }
 
     }
-    echo '</div><div class="panel panel-success"><div class="panel-heading">';
+    echo '</div>';
+    if (Yii::$app->params['devicedetect']['isMobile']) {
+        echo '<div class="panel panel-warning"><div class="panel-heading">微信用户查看<mark>原网页</mark>或在<mark>电脑端</mark>打开可见<strong>下载地址</strong>^_^</div></div>';
+    }
+
+    echo '<div class="panel panel-success"><div class="panel-heading">';
     $arr_content = json_decode($model->content);
     if (is_array($arr_content) && count($arr_content) > 0) {
         foreach ($arr_content as $item) {

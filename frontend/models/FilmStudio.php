@@ -68,4 +68,5 @@ class FilmStudio extends \yii\db\ActiveRecord
     {
         return new FilmStudioQuery(get_called_class());
     }
+    
 }

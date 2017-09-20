@@ -46,7 +46,7 @@ class FilmStudioSearch extends FilmStudio
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query->select(['id', 'title', 'thumb']),
+            'query' => $query->select(['id', 'title']),
             'pagination' => [
                 'pageSize' => 24
             ],

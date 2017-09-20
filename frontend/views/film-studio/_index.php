@@ -14,13 +14,16 @@ use yii\helpers\StringHelper;
 
 <div class="thumbnail">
     <?php
-    $thumb = str_replace(["\r\n", "\n", "\r"], '', trim(strip_tags(base64_decode($model->thumb))));
+
+    $modelThumb = $model::find()->where(['id' => $model->id])->select('thumb')->one();
+
+    $thumb = str_replace(["\r\n", "\n", "\r"], '', trim(strip_tags(base64_decode($modelThumb->thumb))));
 
     if ($thumb == "The server didn't respond in time.please try again later" || preg_match("/^(404|﻿404错误|403|9999|not|error).*/i", $thumb) || preg_match("/function.*/", $thumb)) {
-        echo Html::a(Html::img('/images/thumb.jpg', ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]);
+        echo Html::a(Html::img(Yii::$app->request->baseUrl.'/images/thumb.jpg', ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]);
     } else {
 //        var_dump($thumb);
-        echo Html::a(Html::img('data:image/jpeg;base64,' . $model->thumb, ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]);
+        echo Html::a(Html::img('data:image/jpeg;base64,' . $modelThumb->thumb, ['alt' => $model->title, 'class' => 'img-rounded']), ['film-studio/view', 'id' => $model->id]);
     }
     ?>
     <div class="text-center">
