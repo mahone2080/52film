@@ -1,6 +1,13 @@
 html,
 body {
     height: 100%;
+
+}
+
+div {
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in
 }
 
 .wrap {
@@ -110,7 +117,6 @@ a.desc:after {
     }
 }
 
-
 .nav > li > form > button.logout:focus,
 .nav > li > form > button.logout:hover {
     text-decoration: none;
@@ -119,6 +125,10 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
 @-moz-document url-prefix() {
-    fieldset { display: table-cell; }
+    fieldset {
+        display: table-cell;
+    }
 }
+
