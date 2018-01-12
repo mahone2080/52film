@@ -5,9 +5,9 @@ body {
 }
 
 div {
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    transition: all .5s ease-in
+    /*-webkit-transition: all .5s ease-in;*/
+    /*-moz-transition: all .5s ease-in-out;*/
+    transition: all 1s ease-in-out
 }
 
 .wrap {

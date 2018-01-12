@@ -37,6 +37,7 @@ return [
         '职场' => ['renwu' => '人物',],
     ],
     'story_categories' => [
+        ['label' => '看电影', 'url' => '/'],
         ['label' => '历史', 'url' => ['small-story/index', 'category' => 'china_history,world_history,hougong']],
         ['label' => '爱情', 'url' => ['small-story/index', 'category' => 'city,classic,chulian,love_school,wangluoaiqing']],
         ['label' => '哲理', 'url' => ['small-story/index', 'category' => 'chanli,yuyan,zhihui']],
