@@ -30,9 +30,10 @@ class SmallStory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['url', 'title', 'content', 'category', 'created_at'], 'required'],
+            [['title', 'content', 'category'], 'required'],
             [['content'], 'string'],
-            [['url', 'title', 'category', 'created_at'], 'string', 'max' => 255],
+            [['url', 'title', 'category'], 'string', 'max' => 255],
+            [['created_at'],'safe'],
         ];
     }
 

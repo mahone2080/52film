@@ -2,7 +2,7 @@
 
 namespace frontend\models;
 
-use Yii;
+use yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use frontend\models\SmallStory;
@@ -47,6 +47,9 @@ class SmallStorySearch extends SmallStory
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                'defaultOrder' => ['id' => SORT_DESC,]
+            ],
         ]);
 
         $this->load($params);
@@ -64,7 +67,7 @@ class SmallStorySearch extends SmallStory
 
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['in', 'category', explode(',',$this->category)]);
+            ->andFilterWhere(['in', 'category', explode(',', $this->category)]);
 
         return $dataProvider;
     }

@@ -22,10 +22,8 @@ use kartik\markdown\MarkdownEditor;
         'attribute' => 'content',
     ]);
     ?>
-    <?= $form->field($model, 'category')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($model, 'category')->dropDownList((Yii::$app->params['story'])) ?>
     <?= $form->field($model, 'created_at')->textInput(['maxlength' => true]) ?>
-
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

@@ -76,8 +76,14 @@ class SmallStoryController extends Controller
     {
         $model = new SmallStory();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->created_at = date('Y-m-d H:i:s');
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', 'Saved success!');
+            } else {
+                Yii::$app->session->setFlash('danger', serialize($model->getFirstErrors()));
+            }
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
