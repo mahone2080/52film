@@ -58,8 +58,9 @@ class SmallStoryController extends Controller
     {
         $commentModel = new SmallStoryComments();
         $model = $this->findModel($id);
-        $model->view = $model->view + 1;
-        $model->save();
+        $model->updateCounters(['view'=>1]);
+//        $model->view = $model->view + 1;
+//        $model->save();
         return $this->render('view', [
             'model' => $model,
             'commentModel' => $commentModel,

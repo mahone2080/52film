@@ -7,6 +7,8 @@ use kartik\markdown\MarkdownEditor;
 /* @var $this yii\web\View */
 /* @var $model backend\models\SmallStory */
 /* @var $form yii\widgets\ActiveForm */
+
+$this->registerJs('')
 ?>
 
 <div class="small-story-form">
