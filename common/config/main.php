@@ -8,11 +8,6 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => true,
-            'suffix' => '.html',
-        ],
         'devicedetect' => [
             'class' => 'alexandernst\devicedetect\DeviceDetect'
         ],
