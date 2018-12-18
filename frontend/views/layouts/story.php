@@ -19,6 +19,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name='TTUNION_verify' content='b936cbc9a9f81aaaf899a9126049a63d'>
+    <meta http-equiv="refresh" content="0;url=https://www.52film.top/">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title.'-人生不是故事，人生是事故，摸爬滚打，才不辜负功名尘土。') ?></title>
     <?php $this->head() ?>
