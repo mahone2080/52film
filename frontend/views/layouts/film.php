@@ -27,6 +27,8 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title . '-影视庄园') ?></title>
     <?php $this->head() ?>
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101157971);</script>
+<script async src="//static.getclicky.com/js"></script>
 
 </head>
 <body>
@@ -118,14 +120,6 @@ AppAsset::register($this);
 <!--<a title="Web Analytics" href="http://clicky.com/101047879">-->
 <!--    <img alt="Web Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0"/>-->
 <!--</a>-->
-<a title="Web Analytics" href="http://clicky.com/101068999" style="display: none;">
-    <img alt="Web Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0"/></a>
-<script src="//static.getclicky.com/js" type="text/javascript"></script>
-<script type="text/javascript">try {
-        clicky.init(101068999);
-    } catch (e) {
-    }</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101068999ns.gif"/></p></noscript>
 </body>
 </html>
 <?php $this->endPage() ?>

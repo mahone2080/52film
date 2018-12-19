@@ -22,6 +22,9 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title.'-人生不是故事，人生是事故，摸爬滚打，才不辜负功名尘土。') ?></title>
     <?php $this->head() ?>
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101157971);</script>
+<script async src="//static.getclicky.com/js"></script>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -75,10 +78,6 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
-<a title="Web Analytics" href="http://clicky.com/101047879"><img alt="Web Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
-<script src="//static.getclicky.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(101047879); }catch(e){}</script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101047879ns.gif" /></p></noscript>
 </body>
 </html>
 <?php $this->endPage() ?>
