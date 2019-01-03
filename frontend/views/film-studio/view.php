@@ -28,7 +28,7 @@ $this->registerJs('
         win.alimamatk_onload.push(o);
     })(window,document);
 
-', ['position' => \yii\web\View::POS_END]);
+');
 
 ?>
 <div class="film-studio-view">
