@@ -27,7 +27,13 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title . '-影视庄园') ?></title>
     <?php $this->head() ?>
-
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1954761935478379",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 <body>
 <?php $this->beginBody() ?>
