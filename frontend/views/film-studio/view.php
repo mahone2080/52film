@@ -33,7 +33,7 @@ $this->registerJs('
 ?>
 <div class="film-studio-view">
 
-    <a data-type="13" data-tmpl="628x100" data-tmplid="213" data-rd="2" data-style="2" data-border="1" href="#"></a>
+    <a data-type="13" data-tmpl="628x100" data-tmplid="213" data-rd="2" data-style="2" data-border="1" href="https://s.click.taobao.com/t?e=m%3D2%26s%3DYnLV0HJaRcccQipKwQzePCperVdZeJviK7Vc7tFgwiFRAdhuF14FMWJmsTsIGnwhlovu%2FCElQOvMxElT2TXd%2Fell2FZesTAnrIMhMS0vef7RTwhgJXO8KU5U%2BEi82A4gU9jONtfgAYE735YeP4ao%2FPQho7GrRW4PnynZ4bvuOISqGxr42djOuvQ2dTYp%2Bn82sd%2B%2Ff4Fhw9acZaZLNbaIunA84LCy58V0xg5p7bh%2BFbQ%3D"></a>
     <?php
     //    echo Html::img("data:image/jpeg;base64," . $model->thumb, ['alt' => 'thumb',]) . '<br>';
 
