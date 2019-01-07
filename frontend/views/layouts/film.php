@@ -64,7 +64,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => '推荐', 'url' => ['film-studio/index', 'FilmStudioSearch[category]' => 'bd'], 'options' => ['class' => 'bg-success hidden-md']],
             ['label' => '记录片', 'url' => ['film-studio/index', 'FilmStudioSearch[category]' => 'documentary'], 'options' => ['class' => 'bg-warning hidden-md']],
-            ['label' => '小故事', 'url' => ['small-story/index'], 'options' => ['class' => 'bg-danger hidden-sm']],
+            ['label' => '小故事', 'url' => ['/small-story/index'], 'options' => ['class' => 'bg-danger hidden-sm']],
         ],
     ]);
 
@@ -113,7 +113,6 @@ AppAsset::register($this);
             echo Html::a('记录片', ['film-studio/index', 'FilmStudioSearch[category]' => 'documentary'], ['class' => 'nav-link']);
             echo Html::a('小故事', ['small-story/index'], ['class' => 'nav-link']);
             ?>
-
         </nav>
     </div>
 

@@ -65,7 +65,7 @@ return [
             'rules' => [
                 '' => 'film-studio/index',
                 'film/<id:\d+>' => '/film-studio/view',
-                'story' => 'small-story/index',
+                'story' => '/small-story/index',
                 'story/<id:\d+>' => 'small-story/view',
                 'signup' => 'site/signup',
                 'login' => 'site/login',
