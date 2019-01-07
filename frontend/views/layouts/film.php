@@ -27,7 +27,8 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title . '-影视庄园') ?></title>
     <?php $this->head() ?>
-    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101157971);</script>
+    <script>var clicky_site_ids = clicky_site_ids || [];
+        clicky_site_ids.push(101157971);</script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
@@ -35,6 +36,10 @@ AppAsset::register($this);
             enable_page_level_ads: true
         });
     </script>
+    <?php
+    $this->registerCssFile('@web/css/offcanvas.css');
+    $this->registerCssFile('@web/css/_shadows.css');
+    ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -75,7 +80,6 @@ AppAsset::register($this);
             <button type="submit" class="btn btn-default">搜索</button>
         </form>
     </div>
-
     <?php
 
 
@@ -102,10 +106,23 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
+    <div class="nav-scroller bg-white shadow-sm hidden-md hidden-lg col-sm-12">
+        <nav class="nav nav-underline">
+            <?php
+            echo Html::a('推荐', ['film-studio/index', 'FilmStudioSearch[category]' => 'bd'], ['class' => 'nav-link']);
+            echo Html::a('记录片', ['film-studio/index', 'FilmStudioSearch[category]' => 'documentary'], ['class' => 'nav-link']);
+            echo Html::a('小故事', ['small-story/index'], ['class' => 'nav-link']);
+            ?>
+
+        </nav>
+    </div>
+
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+        <?php
+        //        echo Breadcrumbs::widget([
+        //            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        //        ]) 
+        ?>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
