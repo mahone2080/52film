@@ -11,10 +11,6 @@ use yii\widgets\ActiveForm;
 $this->title = $model->title;
 ?>
 <div class="small-story-view">
-
-    <div class="page-header">
-        <h5 class="text-justify">关注儿童身心健康，我们与您一起成长！</h5>
-    </div>
     <div class="panel panel-success">
         <div class="panel-heading">
             <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
