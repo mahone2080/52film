@@ -27,7 +27,9 @@
     "kartik-v/yii2-markdown": "dev-master",
     "alexandernst/yii2-device-detect": "^0.0.12",
     "dmstr/yii2-adminlte-asset": "^2.1",
-    "fxp/composer-asset-plugin": "^1.4"
+    "fxp/composer-asset-plugin": "^1.4",
+    "kriss/yii2-wang-editor": "*",
+    "2amigos/yii2-ckeditor-widget": "*"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.0.0",

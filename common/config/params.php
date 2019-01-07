@@ -12,6 +12,7 @@ return [
             'chulian' => '初恋',
             'love_school' => '校园爱情',
             'wangluoaiqing' => '网络爱情',
+            'qingsongzhai' => '轻松寨',
         ],
         '哲理' => [
             'chanli' => '禅理',
