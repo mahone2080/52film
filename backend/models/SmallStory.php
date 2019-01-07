@@ -16,6 +16,11 @@ use Yii;
  */
 class SmallStory extends \yii\db\ActiveRecord
 {
+    public static function getDb()
+    {
+        return Yii::$app->getDb('story_db');
+    }
+
     /**
      * @inheritdoc
      */
@@ -33,7 +38,7 @@ class SmallStory extends \yii\db\ActiveRecord
             [['title', 'content', 'category'], 'required'],
             [['content'], 'string'],
             [['url', 'title', 'category'], 'string', 'max' => 255],
-            [['created_at'],'safe'],
+            [['created_at'], 'safe'],
         ];
     }
 

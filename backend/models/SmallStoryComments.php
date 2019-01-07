@@ -16,6 +16,11 @@ use Yii;
  */
 class SmallStoryComments extends \yii\db\ActiveRecord
 {
+    public static function getDb()
+    {
+        return Yii::$app->getDb('story_db');
+    }
+    
     /**
      * @inheritdoc
      */
