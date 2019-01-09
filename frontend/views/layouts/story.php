@@ -66,7 +66,7 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="nav-scroller bg-white shadow-sm hidden-md hidden-lg col-xs-12">
+    <div class="nav-scroller bg-white shadow-xs hidden-md hidden-lg hidden-sm col-xs-12">
         <nav class="nav nav-underline">
             <?php
             echo Html::a('轻松寨', ['small-story/index', 'category' => 'qingsongzhai'], ['class' => 'nav-link']);
