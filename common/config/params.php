@@ -38,15 +38,15 @@ return [
         '职场' => ['renwu' => '人物',],
     ],
     'story_categories' => [
-        ['label' => '看电影', 'url' => '/'],
+        ['label' => '轻松寨', 'url' => ['small-story/index', 'category' => 'qingsongzhai']],
+        ['label' => '看电影', 'url' => 'https://www.52film.top'],
         ['label' => '历史', 'url' => ['small-story/index', 'category' => 'china_history,world_history,hougong']],
         ['label' => '爱情', 'url' => ['small-story/index', 'category' => 'city,classic,chulian,love_school,wangluoaiqing']],
         ['label' => '哲理', 'url' => ['small-story/index', 'category' => 'chanli,yuyan,zhihui']],
         ['label' => '民间', 'url' => ['small-story/index', 'category' => 'china_folk,foreign_folk']],
         ['label' => '名人', 'url' => ['small-story/index', 'category' => 'china_famous,foreign_famous']],
         ['label' => '创业', 'url' => ['small-story/index', 'category' => 'famous_chuangye,folk_chuangye,daxueshengchuangye,nvxing_chuangye']],
-//        ['label' => '职场', 'url' => ['small-story/index', 'category' => 'renwu']],
-
+        ['label' => '职场', 'url' => ['small-story/index', 'category' => 'renwu']],
     ],
     'user.passwordResetTokenExpire' => 3600,
 ];
