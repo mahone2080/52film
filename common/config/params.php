@@ -28,18 +28,18 @@ return [
             'china_famous' => '中国名人',
             'foreign_famous' => '国外名人',
         ],
-
         '创业' => [
             'famous_chuangye' => '名人创业',
             'folk_chuangye' => '乡村创业',
             'daxueshengchuangye' => '大学生创业',
             'nvxing_chuangye' => '女性创业',
         ],
+        
         '职场' => ['renwu' => '人物',],
     ],
     'story_categories' => [
         ['label' => '轻松寨', 'url' => ['small-story/index', 'category' => 'qingsongzhai']],
-        ['label' => '看电影', 'url' => 'https://www.52film.top'],
+        ['label' => '看电影', 'url' => 'https://www.52film.top', ['target' => '_blank']],
         ['label' => '历史', 'url' => ['small-story/index', 'category' => 'china_history,world_history,hougong']],
         ['label' => '爱情', 'url' => ['small-story/index', 'category' => 'city,classic,chulian,love_school,wangluoaiqing']],
         ['label' => '哲理', 'url' => ['small-story/index', 'category' => 'chanli,yuyan,zhihui']],
