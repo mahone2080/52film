@@ -22,9 +22,13 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title . '-人生不是故事，人生是事故，摸爬滚打，才不辜负功名尘土。') ?></title>
     <?php $this->head() ?>
-    <script>var clicky_site_ids = clicky_site_ids || [];
-        clicky_site_ids.push(101157971);</script>
-    <script async src="//static.getclicky.com/js"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3144712571787670",
+    enable_page_level_ads: true
+  });
+</script>
     <?php
     $this->registerCssFile('@web/css/offcanvas.css');
     $this->registerCssFile('@web/css/_shadows.css');
@@ -97,6 +101,9 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101162154);</script>
+<script async src="//static.getclicky.com/js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101162154ns.gif" /></p></noscript>
 </body>
 </html>
 <?php $this->endPage() ?>
