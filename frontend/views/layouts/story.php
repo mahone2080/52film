@@ -85,6 +85,18 @@ AppAsset::register($this);
             ?>
         </nav>
     </div>
+    <div class="row">
+        <div class="visible-xs-* col-xs-12  center-block">
+            <form class="navbar-form navbar-left form-inline" role="" action="/">
+                <div class="form-group col-xs-9">
+                    <input type="text" class="form-control" name="SmallStorySearch[content]" placeholder="关键词" value="<?=Yii::$app->request->queryParams['SmallStorySearch[content]']?>">
+                </div>
+                <div class="col-xs-2">
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
