@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 $this->title = $model->title;
 ?>
-<div class="small-story-view">
+<div class="small-story-view" style="margin-top: 16px;">
     <div class="panel panel-success">
         <div class="panel-heading">
             <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>

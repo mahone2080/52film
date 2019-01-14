@@ -12,7 +12,7 @@ use yii\widgets\LinkPager;
 
 $this->title = '小故事';
 ?>
-<div class="page-header" style="margin:0 auto">
+<div class="page-header" style="margin-top:0px;">
     <h5 class="text-success text-justify">人生不是故事，人生是事故，摸爬滚打，才不辜负功名尘土。</h5>
 </div>
 <div class="small-story-index">
