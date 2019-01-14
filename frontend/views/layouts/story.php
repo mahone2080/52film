@@ -68,8 +68,9 @@ AppAsset::register($this);
         'items' => $menuItems,
     ]);
     NavBar::end();
-    ?>
-
+    $get = Yii::$app->request->get();
+    $keyword = isset($get['SmallStorySearch']['content'])?$get['SmallStorySearch']['content']:'';
+?>
     <div class="nav-scroller bg-white shadow-xs hidden-md hidden-lg hidden-sm col-xs-12">
         <nav class="nav nav-underline">
             <?php
@@ -86,10 +87,10 @@ AppAsset::register($this);
         </nav>
     </div>
     <div class="row">
-        <div class="visible-xs-* col-xs-12  center-block">
+        <div class="hidden-sm hidden-md hidden-lg col-xs-12  center-block">
             <form class="navbar-form navbar-left form-inline" role="" action="/">
                 <div class="form-group col-xs-9">
-                    <input type="text" class="form-control" name="SmallStorySearch[content]" placeholder="关键词" value="<?=Yii::$app->request->queryParams['SmallStorySearch[content]']?>">
+                    <input type="text" class="form-control" name="SmallStorySearch[content]" placeholder="关键词" value="<?=$keyword?>">
                 </div>
                 <div class="col-xs-2">
                     <button type="submit" class="btn btn-default">搜索</button>
