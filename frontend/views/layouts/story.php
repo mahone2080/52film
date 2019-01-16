@@ -78,7 +78,7 @@ AppAsset::register($this);
             echo Html::a('看电影', 'https://www.52film.top', ['class' => 'nav-link', 'target' => '_blank']);
             echo Html::a('历史', ['small-story/index', 'category' => 'china_history,world_history,hougong'], ['class' => 'nav-link']);
             echo Html::a('爱情', ['small-story/index', 'category' => 'city,classic,chulian,love_school,wangluoaiqing'], ['class' => 'nav-link']);
-            echo Html::a('哲理', ['small-story/index', 'category' => 'documentary'], ['class' => 'nav-link']);
+            echo Html::a('哲理', ['small-story/index', 'category' => 'chanli,yuyan,zhihui'], ['class' => 'nav-link']);
             echo Html::a('民间', ['small-story/index', 'category' => 'china_folk,foreign_folk'], ['class' => 'nav-link']);
             echo Html::a('名人', ['small-story/index', 'category' => 'china_famous,foreign_famous'], ['class' => 'nav-link']);
             echo Html::a('创业', ['small-story/index', 'category' => 'china_folk,foreign_folk'], ['class' => 'nav-link']);
