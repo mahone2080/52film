@@ -42,7 +42,7 @@ class SmallStoryController extends Controller
         $searchModel = new SmallStorySearch();
         if ($category) {
             $searchModel->category = $category;
-        }else{
+        } else {
         }
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
@@ -128,7 +128,7 @@ class SmallStoryController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = SmallStory::findOne($id)) !== null) {
+        if (($model = SmallStory::find()->select(['id', 'title', 'content',])->where(['id' => $id])->one()) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
