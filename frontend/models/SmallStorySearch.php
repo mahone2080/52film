@@ -41,7 +41,7 @@ class SmallStorySearch extends SmallStory
      */
     public function search($params)
     {
-        $query = SmallStory::find();
+        $query = SmallStory::find()->select(['id', 'title', 'category', 'view']);
 
         // add conditions that should always apply here
 
