@@ -37,12 +37,14 @@ class SmallStoryController extends Controller
      * Lists all SmallStory models.
      * @return mixed
      */
-    public function actionIndex($category = 'china_history')
+    public function actionIndex($category = 'zhihui')
     {
         $searchModel = new SmallStorySearch();
-        $searchModel->category = $category;
+        if ($category) {
+            $searchModel->category = $category;
+        }else{
+        }
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -58,7 +60,7 @@ class SmallStoryController extends Controller
     {
         $commentModel = new SmallStoryComments();
         $model = $this->findModel($id);
-        $model->updateCounters(['view'=>1]);
+        $model->updateCounters(['view' => 1]);
 //        $model->view = $model->view + 1;
 //        $model->save();
         return $this->render('view', [
