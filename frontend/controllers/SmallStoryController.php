@@ -37,7 +37,7 @@ class SmallStoryController extends Controller
      * Lists all SmallStory models.
      * @return mixed
      */
-    public function actionIndex($category = '')
+    public function actionIndex($category = 'zhihui')
     {
         $searchModel = new SmallStorySearch();
         if ($category) {
