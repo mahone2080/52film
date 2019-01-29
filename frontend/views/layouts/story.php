@@ -74,7 +74,7 @@ AppAsset::register($this);
     <div class="nav-scroller bg-white shadow-xs hidden-md hidden-lg hidden-sm col-xs-12">
         <nav class="nav nav-underline">
             <?php
-            echo Html::a('轻松寨', ['small-story/index', 'category' => 'qingsongzhai'], ['class' => 'nav-link']);
+            echo Html::a('菜根文学', ['small-story/index', 'category' => 'qingsongzhai'], ['class' => 'nav-link']);
 //            echo Html::a('看电影', 'https://www.52film.top', ['class' => 'nav-link', 'target' => '_blank']);
             echo Html::a('历史', ['small-story/index', 'category' => 'china_history,world_history,hougong'], ['class' => 'nav-link']);
             echo Html::a('爱情', ['small-story/index', 'category' => 'city,classic,chulian,love_school,wangluoaiqing'], ['class' => 'nav-link']);
