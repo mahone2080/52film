@@ -66,9 +66,11 @@ class SmallStorySearch extends SmallStory
 //        ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['in', 'category', explode(',', $this->category)]);
-
+            ->andFilterWhere(['like', 'content', $this->content]);
+        if($this->category){
+            $query->andFilterWhere(['in', 'category', explode(',', $this->category)]);
+        }
+        
         return $dataProvider;
     }
 }
