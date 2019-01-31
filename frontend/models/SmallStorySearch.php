@@ -48,7 +48,7 @@ class SmallStorySearch extends SmallStory
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [
-                'defaultOrder' => ['id' => SORT_DESC,]
+                'defaultOrder' => ['view' => SORT_DESC,]
             ],
         ]);
 
