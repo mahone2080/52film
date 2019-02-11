@@ -15,7 +15,7 @@ return [
             'chulian' => '初恋',
             'love_school' => '校园爱情',
             'wangluoaiqing' => '网络爱情',
-            'qingsongzhai' => '菜根文学',
+//            'qingsongzhai' => '菜根文学',
         ],
         '哲理' => [
             'chanli' => '禅理',
@@ -41,7 +41,7 @@ return [
         '职场' => ['renwu' => '人物',],
     ],
     'story_categories' => [
-        ['label' => '菜根文学', 'url' => ['small-story/index', 'category' => 'qingsongzhai']],
+//        ['label' => '菜根文学', 'url' => ['small-story/index', 'category' => 'qingsongzhai']],
         ['label' => '金学', 'url' => ['small-story/index', 'category' => 'jpm']],
 //        ['label' => '看电影', 'url' => 'https://www.52film.top', 'linkOptions'=>['target' => '_blank']],
         ['label' => '历史', 'url' => ['small-story/index', 'category' => 'china_history,world_history,hougong']],
