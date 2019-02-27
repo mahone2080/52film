@@ -41,7 +41,7 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => '小故事',
-        'brandUrl' => ['/small-story/index'],
+        'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar  navbar-default navbar-fixed-top',
         ],
