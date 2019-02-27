@@ -16,7 +16,7 @@ $this->title = '小故事';
     <h5 class="text-success text-justify">人生不是故事，人生是事故，摸爬滚打，才不辜负功名尘土。</h5>
 </div>
 <div class="small-story-index">
-    <?php Pjax::begin(); ?>
+    <?php // Pjax::begin(); ?>
     <?= ListView::widget([
         'dataProvider' => $dataProvider,
         'itemView' => '_index',
@@ -35,4 +35,4 @@ $this->title = '小故事';
         ]
     ]) ?>
 
-    <?php Pjax::end(); ?></div>
+    <?php //Pjax::end(); ?></div>
