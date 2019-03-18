@@ -1,9 +1,9 @@
 <?php
 return [
     'story' => [
-        '文学' => [
-            'jpm' => '金学',
-        ],
+//        '文学' => [
+//            'jpm' => '金学',
+//        ],
         '历史' => [
             'china_history' => '中国历史',
             'world_history' => '世界历史',
@@ -42,7 +42,7 @@ return [
     ],
     'story_categories' => [
 //        ['label' => '菜根文学', 'url' => ['small-story/index', 'category' => 'qingsongzhai']],
-        ['label' => '金学', 'url' => ['small-story/index', 'category' => 'jpm']],
+//        ['label' => '金学', 'url' => ['small-story/index', 'category' => 'jpm']],
 //        ['label' => '看电影', 'url' => 'https://www.52film.top', 'linkOptions'=>['target' => '_blank']],
         ['label' => '历史', 'url' => ['small-story/index', 'category' => 'china_history,world_history,hougong']],
         ['label' => '爱情', 'url' => ['small-story/index', 'category' => 'city,classic,chulian,love_school,wangluoaiqing']],
