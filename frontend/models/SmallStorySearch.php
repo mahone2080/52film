@@ -41,8 +41,8 @@ class SmallStorySearch extends SmallStory
      */
     public function search($params)
     {
-//        $query = SmallStory::find()->select(['id', 'title', 'category', 'view'])->where("category!='qingsongzhai'");
-        $query = SmallStory::find()->select(['id', 'title', 'category', 'view']);
+        $query = SmallStory::find()->select(['id', 'title', 'category', 'view'])->where("category!='qingsongzhai'");
+//        $query = SmallStory::find()->select(['id', 'title', 'category', 'view']);
 
         // add conditions that should always apply here
 
